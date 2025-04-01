@@ -16,3 +16,6 @@ Documentation:
   Enabled: false
 Style/StringLiterals:
   Enabled: true
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/**/*'
