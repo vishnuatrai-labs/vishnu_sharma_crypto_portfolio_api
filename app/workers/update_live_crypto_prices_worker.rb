@@ -4,6 +4,5 @@ class UpdateLiveCryptoPricesWorker
   include Sidekiq::Worker
   sidekiq_options queue: :default
 
-  def perform
-  end
+  def perform; end
 end
