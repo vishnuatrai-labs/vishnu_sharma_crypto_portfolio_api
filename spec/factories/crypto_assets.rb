@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :crypto_asset do
-    name { "MyString" }
-    symbol { "MyString" }
+    name { "Bitcoin" }
+    symbol { "bitcoin" }
     quantity { "9.99" }
     purchase_price { "9.99" }
     current_price { "9.99" }
-    user { nil }
+    association :user
   end
 end
