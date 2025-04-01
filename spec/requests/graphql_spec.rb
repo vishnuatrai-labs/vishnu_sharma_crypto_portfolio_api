@@ -31,5 +31,34 @@ RSpec.describe 'Graphqls', type: :request do
         expect(JSON.parse(response.body)['data']['users']).to contain_exactly(expected_response)
       end
     end
+
+    context 'when get crypto assets' do
+      let(:query) do
+        <<~GQL
+          query {
+            cryptoAssets {
+              id
+              username
+              name
+              symbol
+              quantity
+              purchasePrice
+             }
+          }
+        GQL
+      end
+      let(:crypto_asset) { create(:crypto_asset, user: user) }
+      before { crypto_asset }
+      let(:expected_response) do
+        { 'id' => crypto_asset.id.to_s, 'username' => user.email, 'name' => crypto_asset.name,
+          'symbol' => crypto_asset.symbol, 'quantity' => crypto_asset.quantity.to_i,
+          'purchasePrice' => crypto_asset.purchase_price.to_f }
+      end
+
+      it 'returns crypto assets' do
+        subject
+        expect(JSON.parse(response.body)['data']['cryptoAssets']).to contain_exactly(expected_response)
+      end
+    end
   end
 end
