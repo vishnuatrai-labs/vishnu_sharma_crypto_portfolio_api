@@ -6,5 +6,13 @@ module Mutations
     field_class Types::BaseField
     input_object_class Types::BaseInputObject
     object_class Types::BaseObject
+
+    def authorized?(**_args)
+      current_user.present?
+    end
+
+    def current_user
+      context[:current_user]
+    end
   end
 end
