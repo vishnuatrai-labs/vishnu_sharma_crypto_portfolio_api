@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 FactoryBot.define do
   factory :crypto_asset do
     name { 'Bitcoin' }

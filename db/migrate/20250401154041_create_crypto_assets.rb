@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CreateCryptoAssets < ActiveRecord::Migration[7.1]
   def change
     create_table :crypto_assets do |t|
