@@ -107,7 +107,6 @@ Destroy a crypto asset for the user
             destroyCryptoAsset( input: { id: 1 } )
             {
                 id
-                name
             }
         }
         ```        
