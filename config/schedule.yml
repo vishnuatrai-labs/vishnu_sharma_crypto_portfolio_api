@@ -1,0 +1,5 @@
+---
+update_crypto_prices:
+  cron: '*/1 * * * *'
+  class: UpdateLiveCryptoPricesWorker
+  queue: default
